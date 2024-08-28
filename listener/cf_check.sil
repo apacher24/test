@@ -1,0 +1,11 @@
+//string [] keys = selectIssues("key = TP-24");
+
+//string [] fields = {"Заблокувати доступ"};
+//runnerLog(fields);
+
+
+//string[] statusHistory = fieldHistory(key, "status");
+
+string[] keys = allLinkedIssues("TP-24","Issue", -1);
+runnerLog(Issue);
+runnerLog(keys);
