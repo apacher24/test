@@ -1,0 +1,26 @@
+persistent string gitPath;
+ 
+string baseCommand = "git --git-dir=\"" + gitPath + "\\.git\" --work-tree=\"" + gitPath + "\" ";
+ 
+string [] folders = gadget_getMultiValues(argv, "Folders");
+string [] files = gadget_getMultiValues(argv, "Files");
+string commitMessage = arrayGetElement(argv, "Commit Message");
+ 
+for(string f in folders) {
+    string command = baseCommand + "add --all \"" + gitPath + "\\" + f + "\"";
+    runnerLog("Running git command: " + command);
+    runnerLog(system(command));
+}
+ 
+for(string f in files) {
+    string command = baseCommand + "add \"" + gitPath + "\\" + f + "\"";
+    runnerLog("Running git command: " + command);
+    runnerLog(system(command));
+}
+ 
+string command = baseCommand + "commit -a -m \"" + commitMessage + "\"";
+runnerLog("Running git command: " + command);
+runnerLog(system(command));
+command = (baseCommand + "push origin \nusername: jmuse \n ");
+runnerLog("Running git command: " + command);
+runnerLog(system(command));

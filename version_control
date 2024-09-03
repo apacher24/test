@@ -3,13 +3,13 @@
 string path = "/var/atlassian/application-data/jira/silprograms";
 string gitstatus = "sudo git status --porcelain";
 string user = currentUsername();
-string gadd = "sudo git add . && sudo git add -u";
-string gpush = "sudo git push origin master";
-//string commit = "git commit -m \""+user +summary"\"";
-string command = path + gadd + "sudo git commit -a -m \"" + user + key + summary +"\"" + gpush;
+string gadd = " && sudo git add . && sudo git add -u ";
+string gpush = " && sudo git push origin master";
 
+//string command = path + gadd + "sudo git commit -a -m \"" + user + key + summary +"\"" + gpush;
 
-//string command = "cd "+path+" && sudo git add . && sudo git add -u &&";
+string command = "cd /var/atlassian/application-data/jira/silprograms &&  sudo git add . &&  sudo git add -u &&  sudo git commit -m test && sudo git push origin master";
+
 
 
     runnerLog(command);
