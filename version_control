@@ -9,7 +9,7 @@ string gpush = " && sudo git push origin master";
 //string command = path + gadd + "sudo git commit -a -m \"" + user + key + summary +"\"" + gpush;
 
 //string command = "cd /var/atlassian/application-data/jira/silprograms &&  sudo git add . &&  sudo git add -u &&  sudo git commit -m test && sudo git push origin master";
-string gadd = "/opt/atlassian/jira/bin/devopstools/commit.sh" + user + key;
+string gadd = "/opt/atlassian/jira/bin/devopstools/commit.sh " + user + " $key";
 string command = gadd;
 
     runnerLog(command);
