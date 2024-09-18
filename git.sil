@@ -1,0 +1,5 @@
+    string command = "git -C /var/atlassian/application-data/jira/silprograms status --porcelain";
+     
+    runnerLog(command);
+    runnerLog("-------------");
+    runnerLog(system(command));
