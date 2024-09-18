@@ -11,12 +11,14 @@ string gpush = " && sudo git push origin master";
 //string command = "cd /var/atlassian/application-data/jira/silprograms &&  sudo git add . &&  sudo git add -u &&  sudo git commit -m test && sudo git push origin master";
 string mesa = user + " " + key;// + " " + summary;
 string dsum = summary;
-string gadd = "/opt/atlassian/jira/bin/devopstools/commit.sh " + mesa + " " + dsum;
+string gadd = "/opt/atlassian/jira/bin/devopstools/commit.sh " + mesa; // + " " + dsum;
 string command = gadd;
 
     runnerLog(command);
     runnerLog("-------------");
     runnerLog(system(command));
+    //addComment(issue, username, comment [, securityLevel, dispatchEvent])
+    addComment(issue, user, command, ,dispatch);
   /*  
 string gstatus = "sudo git status /var/atlassian/application-data/jira/silprograms/";
     runnerLog(command);
